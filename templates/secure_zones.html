@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Secure Zones</title></head>
+<body style="font-family:Arial;background:#f4f7fa;padding:40px;">
+<div style="max-width:900px;margin:auto;background:white;padding:30px;border-radius:16px;">
+  <h2>Secure Wildlife Monitoring Zones</h2>
+  <form method="post">
+    <p><strong>Laser Beams (x1 y1 x2 y2 per line):</strong></p>
+    <textarea name="beams" rows="6" style="width:100%;padding:10px;">100 200 300 400
+150 350 350 150
+200 100 400 300
+120 320 380 180</textarea>
+    <button style="margin-top:15px;padding:12px 30px;background:#e73c7e;color:white;border:none;border-radius:8px;">Find Secure Region</button>
+  </form>
+
+  {% if hull %}
+    <div style="margin-top:30px;padding:20px;background:#fff3cd;border-radius:10px;">
+      <h3>Smallest Secure Region</h3>
+      <p><strong>Area:</strong> {{ "%.2f"|format(area) }} sq units</p>
+      <p><strong>Boundary Points:</strong> {{ hull|round(2) }}</p>
+    </div>
+  {% endif %}
+  <p><a href="/">Back</a></p>
+</div>
+</body>
+</html>
