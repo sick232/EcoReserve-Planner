@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5d523e99ef2101b078172b69a3f7d5d1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:40px;left:40px;width:320px;
+    background:white;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    padding:15px;font-family:Arial;font-size:14px;z-index:9999;">
+        <div style="font-weight:bold;font-size:16px;margin-bottom:10px;
+        color:#1E88E5;">EcoReserve (Secondary)</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:8px;">
+            <div>📏 Size:</div><div>4x4</div>
+            <div>📍 Position:</div><div>(2,5)</div>
+            <div>📊 Score:</div><div>1110</div>
+        </div>
+    </div>
+    
+    
+        <div style="position:fixed;bottom:40px;right:40px;width:260px;
+        background:rgba(255,255,255,0.95);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        padding:12px;font-family:Arial;font-size:13px;z-index:9999;text-align:left;">
+            <div style="font-weight:700;color:#1E88E5;margin-bottom:8px;">Bottom-right Cell</div>
+            <div style="font-size:13px;">Indices: <strong>(5, 8)</strong></div>
+            <div style="font-size:13px;">Center: <strong>11.656000, 76.685000</strong></div>
+        </div>
+        
+    
+            <div class="folium-map" id="map_5d523e99ef2101b078172b69a3f7d5d1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5d523e99ef2101b078172b69a3f7d5d1 = L.map(
+                "map_5d523e99ef2101b078172b69a3f7d5d1",
+                {
+                    center: [11.66, 76.66],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_28c94736ab573ebbb2e0688316ecd26f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_28c94736ab573ebbb2e0688316ecd26f.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var tile_layer_dbed9620ba3be87153f4d8ddce2fa54d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_dbed9620ba3be87153f4d8ddce2fa54d.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var tile_layer_a94fbd12bc22a2abc5a336d3f49ca7fc = L.tileLayer(
+                "Stamen Terrain",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a94fbd12bc22a2abc5a336d3f49ca7fc.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var tile_layer_5217e5cd2982afa391b70af4455fbdc4 = L.tileLayer(
+                "Stamen Toner",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5217e5cd2982afa391b70af4455fbdc4.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var feature_group_930c71eec195e857cd2cf0ce4cfef835 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var rectangle_8c08774b31865bf73e0af558963402a5 = L.rectangle(
+                [[11.7, 76.6], [11.692, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_8933ff2606852ce63a495da9ba823ad0 = L.rectangle(
+                [[11.7, 76.61], [11.692, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_14856658d7a8071ffdaca8987a1133de = L.rectangle(
+                [[11.7, 76.61999999999999], [11.692, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_bc7514c364efc6ebbd98103ba565acda = L.rectangle(
+                [[11.7, 76.64999999999999], [11.692, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e1aca2c61765466199989481c8b02ad0 = L.rectangle(
+                [[11.7, 76.66], [11.692, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ff9c09f60d94683249ab5331d9b93a43 = L.rectangle(
+                [[11.7, 76.66999999999999], [11.692, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_3f87bc7dfd3640d3c9354a64f3e48618 = L.rectangle(
+                [[11.7, 76.67999999999999], [11.692, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_914d41c058bdeea6d793267b9a68e1fd = L.rectangle(
+                [[11.7, 76.69], [11.692, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_c9805a265b9f01d5994fd04071460e14 = L.rectangle(
+                [[11.692, 76.6], [11.684000000000001, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_c4e1c10c41a2baaca4b1b8511edfc101 = L.rectangle(
+                [[11.692, 76.61], [11.684000000000001, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_47dda7383836a294da8ffe6f9fba1875 = L.rectangle(
+                [[11.692, 76.61999999999999], [11.684000000000001, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_25d6e54ee05551e9c6925e08b3e67003 = L.rectangle(
+                [[11.692, 76.63], [11.684000000000001, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ba06458ae9c45b0bc2b5dfb1da323fdb = L.rectangle(
+                [[11.692, 76.64], [11.684000000000001, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e4c4dfe9b7930a664607782c6cfbb6dc = L.rectangle(
+                [[11.692, 76.64999999999999], [11.684000000000001, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_18a80429ea5ab866addc4630d4a39de1 = L.rectangle(
+                [[11.692, 76.67999999999999], [11.684000000000001, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_0c100a0bf73d51b4523ea8eac0e6a771 = L.rectangle(
+                [[11.692, 76.69], [11.684000000000001, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_7b108b5afe40d35107b2ae4d5cc02bee = L.rectangle(
+                [[11.684, 76.6], [11.676, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_02f41ba329056d8adbcda3785919286d = L.rectangle(
+                [[11.684, 76.61], [11.676, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_7904d1a8da5620f8fd497fe85ccfa065 = L.rectangle(
+                [[11.684, 76.61999999999999], [11.676, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_513eb57180ca1e4786023bd6ab04f9d2 = L.rectangle(
+                [[11.684, 76.63], [11.676, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_5292a849d6f0c510ecfaf5510ae8ac3f = L.rectangle(
+                [[11.684, 76.64], [11.676, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_57eb3063004f26259a3beeed0b90a80b = L.rectangle(
+                [[11.684, 76.69], [11.676, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_35733d8cd2f04a3a195760be362e321e = L.rectangle(
+                [[11.676, 76.61], [11.668000000000001, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e74a45cf8394246dc5df7eb0d42acafd = L.rectangle(
+                [[11.676, 76.61999999999999], [11.668000000000001, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_bf5ae84319ce1f690bfc0e861e8226e4 = L.rectangle(
+                [[11.676, 76.63], [11.668000000000001, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_50ad4d920c527bd825166b00edf6f62a = L.rectangle(
+                [[11.676, 76.64], [11.668000000000001, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_99c915c3d8fa74dcc985e185746251bf = L.rectangle(
+                [[11.668, 76.6], [11.66, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_07fc3b31d7866ac2de254d08add725ea = L.rectangle(
+                [[11.668, 76.61], [11.66, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_36689ebd72363285393fb498892badc2 = L.rectangle(
+                [[11.668, 76.61999999999999], [11.66, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_be5621bf91dfd37080350264632d5326 = L.rectangle(
+                [[11.668, 76.63], [11.66, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ee94905f29deb1b4bc75450ad99bbf79 = L.rectangle(
+                [[11.668, 76.64], [11.66, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ee26afc1c0953ab784e8ec86ed9f113d = L.rectangle(
+                [[11.668, 76.69], [11.66, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_15a1f0403e1aba6060b921f356d1782a = L.rectangle(
+                [[11.66, 76.6], [11.652000000000001, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_296b7790bec1403b5461395e98061728 = L.rectangle(
+                [[11.66, 76.61], [11.652000000000001, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_2ac839e2341de0a311ebb289ab2e9a7d = L.rectangle(
+                [[11.66, 76.61999999999999], [11.652000000000001, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_a9e70c18ebb4f1ad86a926ac815d3b56 = L.rectangle(
+                [[11.66, 76.63], [11.652000000000001, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e985262d5d62ca1e1687a02b599ce68c = L.rectangle(
+                [[11.66, 76.64], [11.652000000000001, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_d370b322bd3acda0dd204780f3ee8ca9 = L.rectangle(
+                [[11.66, 76.69], [11.652000000000001, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_0e0ad559daab35c386920db8dd1637c6 = L.rectangle(
+                [[11.652, 76.6], [11.644, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_df1045300b1bf7574419bb2b1571a785 = L.rectangle(
+                [[11.652, 76.61], [11.644, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e510a0394140e1f4bced5352a4cb7f95 = L.rectangle(
+                [[11.652, 76.61999999999999], [11.644, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_1f888c035b5a17009aa7d5c7af4a8473 = L.rectangle(
+                [[11.652, 76.63], [11.644, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_670ae4a773c72901b44ed19260d4032d = L.rectangle(
+                [[11.652, 76.64], [11.644, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_5a9dc4716c45d2ff5192e9c0d9c36f5a = L.rectangle(
+                [[11.652, 76.66999999999999], [11.644, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ecf1c52001426e0ed5af86233a0e3f3f = L.rectangle(
+                [[11.652, 76.67999999999999], [11.644, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_3bff7b34151de7fda5680f5370ff7783 = L.rectangle(
+                [[11.652, 76.69], [11.644, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_498c08745099aecf4f2d050768621ee3 = L.rectangle(
+                [[11.644, 76.6], [11.636000000000001, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_117abd1c463b259870981aefc6a1151c = L.rectangle(
+                [[11.644, 76.61], [11.636000000000001, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_b0a2a9638271b99777c0e6657e4faf6b = L.rectangle(
+                [[11.644, 76.61999999999999], [11.636000000000001, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_031f2fe21653d919a6d1159255b0fccf = L.rectangle(
+                [[11.644, 76.63], [11.636000000000001, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_6579c439cff47ad316935a8699625012 = L.rectangle(
+                [[11.644, 76.66], [11.636000000000001, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_bd9572f442a5d84b50d528ee9864c751 = L.rectangle(
+                [[11.644, 76.66999999999999], [11.636000000000001, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_d5b816dfbfedd5869f42b40802540f6e = L.rectangle(
+                [[11.644, 76.67999999999999], [11.636000000000001, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_2071630df8b2406d5f65c04268bc84f2 = L.rectangle(
+                [[11.644, 76.69], [11.636000000000001, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_0b4485931808a3972385d7ded75f67a1 = L.rectangle(
+                [[11.636, 76.6], [11.628, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_421629c53110b8fe225f5ad17852740f = L.rectangle(
+                [[11.636, 76.61], [11.628, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_00977407c1b9a1511123cd18bd48ee02 = L.rectangle(
+                [[11.636, 76.61999999999999], [11.628, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_d3e2a6f74e22fe9acd66da72c7b0bf5d = L.rectangle(
+                [[11.636, 76.64999999999999], [11.628, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_f74e5c8f0225128bb6445946d0107233 = L.rectangle(
+                [[11.636, 76.66], [11.628, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_f0ac7cef401398e8c0ef5056460fe23f = L.rectangle(
+                [[11.636, 76.66999999999999], [11.628, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_4ba678061b1afd21e87e28b70087fa6a = L.rectangle(
+                [[11.636, 76.67999999999999], [11.628, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_7fdb977967eb833d80bfee2827fb7af1 = L.rectangle(
+                [[11.636, 76.69], [11.628, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_3a457b907307ee4de584f50ef8cec0be = L.rectangle(
+                [[11.628, 76.6], [11.620000000000001, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_5850695415ef97ed605bee28b963dcef = L.rectangle(
+                [[11.628, 76.61], [11.620000000000001, 76.62]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_4f6ce67c157f4437befc6b52f7c3bb68 = L.rectangle(
+                [[11.628, 76.64], [11.620000000000001, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_11d0adc82aac0d007f936cc4da0c3495 = L.rectangle(
+                [[11.628, 76.64999999999999], [11.620000000000001, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_eb396a155d15ce40c690f186a81ca9dc = L.rectangle(
+                [[11.628, 76.66], [11.620000000000001, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_496b30a9d18b13fc0311b323abfbf105 = L.rectangle(
+                [[11.628, 76.66999999999999], [11.620000000000001, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_06d4b5706e261bacf836128aee88e136 = L.rectangle(
+                [[11.628, 76.67999999999999], [11.620000000000001, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_d1a1ad182326578d05e75b03d2b920fb = L.rectangle(
+                [[11.628, 76.69], [11.620000000000001, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_71da23006953c4f273d1722afa9aa618 = L.rectangle(
+                [[11.692, 76.69999999999999], [11.684000000000001, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ca19adeb9598ebff1de1f2ba7bf1b21a = L.rectangle(
+                [[11.692, 76.71], [11.684000000000001, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_9d305aeba53ddb71ffce1aba1c7e8380 = L.rectangle(
+                [[11.684, 76.69999999999999], [11.676, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_4a9a5550b8062dfddadc31faa41e8d19 = L.rectangle(
+                [[11.684, 76.71], [11.676, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_fc300f72edb34f8bf57cce9ec4a9f9d2 = L.rectangle(
+                [[11.676, 76.69999999999999], [11.668000000000001, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_923035062d569cf806268073b382ac30 = L.rectangle(
+                [[11.676, 76.71], [11.668000000000001, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_f571e8895083d7608106c9e7f1ac49a7 = L.rectangle(
+                [[11.668, 76.69999999999999], [11.66, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_ee38b2e0dbed2d3f8523294a7f28db36 = L.rectangle(
+                [[11.668, 76.71], [11.66, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_f744abc1533ace2032bd14136cba39a4 = L.rectangle(
+                [[11.66, 76.69999999999999], [11.652000000000001, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_5415284c25efdb7e5c789008abb82eaa = L.rectangle(
+                [[11.66, 76.71], [11.652000000000001, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_8602bcc40847591f1a365d2dcd2e0ef5 = L.rectangle(
+                [[11.652, 76.69999999999999], [11.644, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_7fccbbf943706e798d5d5afb95b8a4a7 = L.rectangle(
+                [[11.652, 76.71], [11.644, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_9f964313b9571a621abfe4b5b5796ac3 = L.rectangle(
+                [[11.644, 76.69999999999999], [11.636000000000001, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_71fff244e67f1b8ce367704fda2b1401 = L.rectangle(
+                [[11.644, 76.71], [11.636000000000001, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_727e4fbfe97dca57e50cf5cd09643ae8 = L.rectangle(
+                [[11.636, 76.69999999999999], [11.628, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_e26a61e9a227302c52b146a78a8dc6ff = L.rectangle(
+                [[11.636, 76.71], [11.628, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            var rectangle_88d46daba14ce1fbc10068c6a207734b = L.rectangle(
+                [[11.628, 76.69999999999999], [11.620000000000001, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#bdbdbd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bdbdbd", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_930c71eec195e857cd2cf0ce4cfef835);
+        
+    
+            feature_group_930c71eec195e857cd2cf0ce4cfef835.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var feature_group_be298405145968fa60acb055b765781c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var rectangle_bcf88d7de52baa531605cfb48c10cc98 = L.rectangle(
+                [[11.7, 76.63], [11.692, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_95609e9175776c5375e72fab25145d59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5e78fe37de18c0fbe4591caa9dc51f3 = $(`<div id="html_b5e78fe37de18c0fbe4591caa9dc51f3" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (0,3)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_95609e9175776c5375e72fab25145d59.setContent(html_b5e78fe37de18c0fbe4591caa9dc51f3);
+            
+        
+
+        rectangle_bcf88d7de52baa531605cfb48c10cc98.bindPopup(popup_95609e9175776c5375e72fab25145d59)
+        ;
+
+        
+    
+    
+            var rectangle_b87082681ef7ee36f427fbb1e0e5b936 = L.rectangle(
+                [[11.7, 76.64], [11.692, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_f6c48970bc97cc95c509a8c107ba632e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ae873ccd8f9d9dcede0596ba48320e8 = $(`<div id="html_5ae873ccd8f9d9dcede0596ba48320e8" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (0,4)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_f6c48970bc97cc95c509a8c107ba632e.setContent(html_5ae873ccd8f9d9dcede0596ba48320e8);
+            
+        
+
+        rectangle_b87082681ef7ee36f427fbb1e0e5b936.bindPopup(popup_f6c48970bc97cc95c509a8c107ba632e)
+        ;
+
+        
+    
+    
+            var rectangle_8547a2fd5c052f8fac0b9e25d633bc8f = L.rectangle(
+                [[11.692, 76.66], [11.684000000000001, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_5ad329f8cca98b872f5dab2716aa7712 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a070d830ce3d88975ce4f7999148f5d = $(`<div id="html_7a070d830ce3d88975ce4f7999148f5d" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (1,6)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_5ad329f8cca98b872f5dab2716aa7712.setContent(html_7a070d830ce3d88975ce4f7999148f5d);
+            
+        
+
+        rectangle_8547a2fd5c052f8fac0b9e25d633bc8f.bindPopup(popup_5ad329f8cca98b872f5dab2716aa7712)
+        ;
+
+        
+    
+    
+            var rectangle_880a75b08b464c35973f6a7090587918 = L.rectangle(
+                [[11.692, 76.66999999999999], [11.684000000000001, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_8404431b1ce390ac6f2d5cc5aaf12cd1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb511e1ff05e2f124a0007cfa5a9564e = $(`<div id="html_cb511e1ff05e2f124a0007cfa5a9564e" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (1,7)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_8404431b1ce390ac6f2d5cc5aaf12cd1.setContent(html_cb511e1ff05e2f124a0007cfa5a9564e);
+            
+        
+
+        rectangle_880a75b08b464c35973f6a7090587918.bindPopup(popup_8404431b1ce390ac6f2d5cc5aaf12cd1)
+        ;
+
+        
+    
+    
+            var rectangle_1394f6df7616b0cfaecf6f192c31e345 = L.rectangle(
+                [[11.676, 76.6], [11.668000000000001, 76.61]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_7e2a07acece8a17f49339b75a452ff8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ac76318b3edcfbdb41cb4aa1041ab36 = $(`<div id="html_6ac76318b3edcfbdb41cb4aa1041ab36" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,0)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_7e2a07acece8a17f49339b75a452ff8d.setContent(html_6ac76318b3edcfbdb41cb4aa1041ab36);
+            
+        
+
+        rectangle_1394f6df7616b0cfaecf6f192c31e345.bindPopup(popup_7e2a07acece8a17f49339b75a452ff8d)
+        ;
+
+        
+    
+    
+            var rectangle_53528fbcdc76a5a9c22792df1fbbf1f5 = L.rectangle(
+                [[11.676, 76.69], [11.668000000000001, 76.7]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_5d057ee777bcebff3c47aecbc5dafdfe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12defb43138555d7d08de8b0193085a1 = $(`<div id="html_12defb43138555d7d08de8b0193085a1" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,9)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_5d057ee777bcebff3c47aecbc5dafdfe.setContent(html_12defb43138555d7d08de8b0193085a1);
+            
+        
+
+        rectangle_53528fbcdc76a5a9c22792df1fbbf1f5.bindPopup(popup_5d057ee777bcebff3c47aecbc5dafdfe)
+        ;
+
+        
+    
+    
+            var rectangle_24db56d0026751ff34362ba3072207d4 = L.rectangle(
+                [[11.652, 76.64999999999999], [11.644, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_34098342a1728c727febf6d41ad29006 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fcf6c90307a789ccf28986a2cbfbcd4c = $(`<div id="html_fcf6c90307a789ccf28986a2cbfbcd4c" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (6,5)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_34098342a1728c727febf6d41ad29006.setContent(html_fcf6c90307a789ccf28986a2cbfbcd4c);
+            
+        
+
+        rectangle_24db56d0026751ff34362ba3072207d4.bindPopup(popup_34098342a1728c727febf6d41ad29006)
+        ;
+
+        
+    
+    
+            var rectangle_4d1f1615fe5479904c949c3caa2b2fcb = L.rectangle(
+                [[11.652, 76.66], [11.644, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_6538f13c7ef875ead204c9836674b4c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e5ff9ed3f9a3e71883880b425405488 = $(`<div id="html_8e5ff9ed3f9a3e71883880b425405488" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (6,6)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_6538f13c7ef875ead204c9836674b4c7.setContent(html_8e5ff9ed3f9a3e71883880b425405488);
+            
+        
+
+        rectangle_4d1f1615fe5479904c949c3caa2b2fcb.bindPopup(popup_6538f13c7ef875ead204c9836674b4c7)
+        ;
+
+        
+    
+    
+            var rectangle_a3b1cedebe2209d0e9908c2ce5219340 = L.rectangle(
+                [[11.644, 76.64], [11.636000000000001, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_18686aece111208812f31ba1398bf134 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ece70f766ff4ac2eef7374e77bc9cb06 = $(`<div id="html_ece70f766ff4ac2eef7374e77bc9cb06" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (7,4)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_18686aece111208812f31ba1398bf134.setContent(html_ece70f766ff4ac2eef7374e77bc9cb06);
+            
+        
+
+        rectangle_a3b1cedebe2209d0e9908c2ce5219340.bindPopup(popup_18686aece111208812f31ba1398bf134)
+        ;
+
+        
+    
+    
+            var rectangle_4a5b8f4ca25af26b6b643c20b6aaf23f = L.rectangle(
+                [[11.644, 76.64999999999999], [11.636000000000001, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_33ac1ba8cca5c020116af43b2fa66671 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c96e9d29814fc1aa309c2e8710c19513 = $(`<div id="html_c96e9d29814fc1aa309c2e8710c19513" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (7,5)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_33ac1ba8cca5c020116af43b2fa66671.setContent(html_c96e9d29814fc1aa309c2e8710c19513);
+            
+        
+
+        rectangle_4a5b8f4ca25af26b6b643c20b6aaf23f.bindPopup(popup_33ac1ba8cca5c020116af43b2fa66671)
+        ;
+
+        
+    
+    
+            var rectangle_f49c54f5a279dedc02bec59a92e39356 = L.rectangle(
+                [[11.636, 76.63], [11.628, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_8d205fa921077c50a293492e4f5e4543 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbf8c82e775c1ed47fba5cfddc52cc89 = $(`<div id="html_dbf8c82e775c1ed47fba5cfddc52cc89" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (8,3)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_8d205fa921077c50a293492e4f5e4543.setContent(html_dbf8c82e775c1ed47fba5cfddc52cc89);
+            
+        
+
+        rectangle_f49c54f5a279dedc02bec59a92e39356.bindPopup(popup_8d205fa921077c50a293492e4f5e4543)
+        ;
+
+        
+    
+    
+            var rectangle_4749ba97fc1f29019a07c2c02aa640de = L.rectangle(
+                [[11.636, 76.64], [11.628, 76.65]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_737e0e009cc9032bcd6babd7a6f75d37 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e2710c776c50b935510f461ab621db4 = $(`<div id="html_6e2710c776c50b935510f461ab621db4" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (8,4)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_737e0e009cc9032bcd6babd7a6f75d37.setContent(html_6e2710c776c50b935510f461ab621db4);
+            
+        
+
+        rectangle_4749ba97fc1f29019a07c2c02aa640de.bindPopup(popup_737e0e009cc9032bcd6babd7a6f75d37)
+        ;
+
+        
+    
+    
+            var rectangle_7ca9baf875b28495d674e2112cfababa = L.rectangle(
+                [[11.628, 76.61999999999999], [11.620000000000001, 76.63]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_1c508a08fb2f3c37806324ecb8034af2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72813e27687c98e85f5ebd505d451449 = $(`<div id="html_72813e27687c98e85f5ebd505d451449" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (9,2)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_1c508a08fb2f3c37806324ecb8034af2.setContent(html_72813e27687c98e85f5ebd505d451449);
+            
+        
+
+        rectangle_7ca9baf875b28495d674e2112cfababa.bindPopup(popup_1c508a08fb2f3c37806324ecb8034af2)
+        ;
+
+        
+    
+    
+            var rectangle_fe24b7d2a70affcb40508400a54688c4 = L.rectangle(
+                [[11.628, 76.63], [11.620000000000001, 76.64]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_90ab2cac3d87bfb20e61d4aaebf11e7c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_371f8b38211d1d12d8576a3656ec3254 = $(`<div id="html_371f8b38211d1d12d8576a3656ec3254" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (9,3)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_90ab2cac3d87bfb20e61d4aaebf11e7c.setContent(html_371f8b38211d1d12d8576a3656ec3254);
+            
+        
+
+        rectangle_fe24b7d2a70affcb40508400a54688c4.bindPopup(popup_90ab2cac3d87bfb20e61d4aaebf11e7c)
+        ;
+
+        
+    
+    
+            var rectangle_d7fb894a6295563d0b9e442b35c247b4 = L.rectangle(
+                [[11.7, 76.69999999999999], [11.692, 76.71]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_8f96f105ce4803a35a5fa1e8128e3730 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c44b8cad259357914c18db079b515e08 = $(`<div id="html_c44b8cad259357914c18db079b515e08" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (0,10)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_8f96f105ce4803a35a5fa1e8128e3730.setContent(html_c44b8cad259357914c18db079b515e08);
+            
+        
+
+        rectangle_d7fb894a6295563d0b9e442b35c247b4.bindPopup(popup_8f96f105ce4803a35a5fa1e8128e3730)
+        ;
+
+        
+    
+    
+            var rectangle_c61f78a7f2cd059073fa5f14fa42c918 = L.rectangle(
+                [[11.7, 76.71], [11.692, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_8e70b260f640c94ace885d5d70739ac2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0bdcaedb283106ac4e0dc993e1d284d8 = $(`<div id="html_0bdcaedb283106ac4e0dc993e1d284d8" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (0,11)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_8e70b260f640c94ace885d5d70739ac2.setContent(html_0bdcaedb283106ac4e0dc993e1d284d8);
+            
+        
+
+        rectangle_c61f78a7f2cd059073fa5f14fa42c918.bindPopup(popup_8e70b260f640c94ace885d5d70739ac2)
+        ;
+
+        
+    
+    
+            var rectangle_90be4823b1f46133a2d02fe9a5334157 = L.rectangle(
+                [[11.628, 76.71], [11.620000000000001, 76.72]],
+                {"bubblingMouseEvents": true, "color": "#90CAF9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90CAF9", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_be298405145968fa60acb055b765781c);
+        
+    
+        var popup_30a663bd93937e96318b95903426f6ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_290c1d9779aaf83ff2af8a4021ea5854 = $(`<div id="html_290c1d9779aaf83ff2af8a4021ea5854" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (9,11)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> High Value</p>                         </div>                         </div>`)[0];
+                popup_30a663bd93937e96318b95903426f6ef.setContent(html_290c1d9779aaf83ff2af8a4021ea5854);
+            
+        
+
+        rectangle_90be4823b1f46133a2d02fe9a5334157.bindPopup(popup_30a663bd93937e96318b95903426f6ef)
+        ;
+
+        
+    
+    
+            feature_group_be298405145968fa60acb055b765781c.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var feature_group_4ab745b914cd518325a03d57aa602d48 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var rectangle_e0b3bfc1fe03625014ead372b005b297 = L.rectangle(
+                [[11.684, 76.64999999999999], [11.676, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_0ecbbf4b285f2348133ebdf897b7399b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b22db1a1e1bcd1955f195194d35b81a = $(`<div id="html_4b22db1a1e1bcd1955f195194d35b81a" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (2,5)</p>                             <p><b>Score:</b> 60</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_0ecbbf4b285f2348133ebdf897b7399b.setContent(html_4b22db1a1e1bcd1955f195194d35b81a);
+            
+        
+
+        rectangle_e0b3bfc1fe03625014ead372b005b297.bindPopup(popup_0ecbbf4b285f2348133ebdf897b7399b)
+        ;
+
+        
+    
+    
+            var rectangle_1841d244f10190b18b22608543896f41 = L.rectangle(
+                [[11.684, 76.66], [11.676, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_9d104846f35973dfc0ff67c4b384f4c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55afd050cd541fb307cfd2b0923fce52 = $(`<div id="html_55afd050cd541fb307cfd2b0923fce52" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (2,6)</p>                             <p><b>Score:</b> 70</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_9d104846f35973dfc0ff67c4b384f4c4.setContent(html_55afd050cd541fb307cfd2b0923fce52);
+            
+        
+
+        rectangle_1841d244f10190b18b22608543896f41.bindPopup(popup_9d104846f35973dfc0ff67c4b384f4c4)
+        ;
+
+        
+    
+    
+            var rectangle_58e47623fbd14c5d9bfb39f6b4ce1755 = L.rectangle(
+                [[11.684, 76.66999999999999], [11.676, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_d6b23163c7928a82618e13f05f3664e9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9a4ba38ca9d3dfa0a0270e4fd98565e = $(`<div id="html_d9a4ba38ca9d3dfa0a0270e4fd98565e" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (2,7)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_d6b23163c7928a82618e13f05f3664e9.setContent(html_d9a4ba38ca9d3dfa0a0270e4fd98565e);
+            
+        
+
+        rectangle_58e47623fbd14c5d9bfb39f6b4ce1755.bindPopup(popup_d6b23163c7928a82618e13f05f3664e9)
+        ;
+
+        
+    
+    
+            var rectangle_432bf58834e792d0adbb1f8105cf3521 = L.rectangle(
+                [[11.684, 76.67999999999999], [11.676, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_3ea8633cf66c818c45fcc1686d968ed9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6fc0e6165ad21bf2e653c188110f347e = $(`<div id="html_6fc0e6165ad21bf2e653c188110f347e" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (2,8)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_3ea8633cf66c818c45fcc1686d968ed9.setContent(html_6fc0e6165ad21bf2e653c188110f347e);
+            
+        
+
+        rectangle_432bf58834e792d0adbb1f8105cf3521.bindPopup(popup_3ea8633cf66c818c45fcc1686d968ed9)
+        ;
+
+        
+    
+    
+            var rectangle_9b8a4f893145e6da72ed9ac32bda4ab7 = L.rectangle(
+                [[11.676, 76.64999999999999], [11.668000000000001, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_d9e06ba804620328d6cc310635644444 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d1128a5c7f5dd95290847257a42f4034 = $(`<div id="html_d1128a5c7f5dd95290847257a42f4034" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,5)</p>                             <p><b>Score:</b> 50</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_d9e06ba804620328d6cc310635644444.setContent(html_d1128a5c7f5dd95290847257a42f4034);
+            
+        
+
+        rectangle_9b8a4f893145e6da72ed9ac32bda4ab7.bindPopup(popup_d9e06ba804620328d6cc310635644444)
+        ;
+
+        
+    
+    
+            var rectangle_3d65c52ecac3bead1ed111b5b5726fbc = L.rectangle(
+                [[11.676, 76.66], [11.668000000000001, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_3b96b736a132e55caf788036bc36aa86 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_460a02fd43b945760ebf5b8a3823c8b1 = $(`<div id="html_460a02fd43b945760ebf5b8a3823c8b1" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,6)</p>                             <p><b>Score:</b> 60</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_3b96b736a132e55caf788036bc36aa86.setContent(html_460a02fd43b945760ebf5b8a3823c8b1);
+            
+        
+
+        rectangle_3d65c52ecac3bead1ed111b5b5726fbc.bindPopup(popup_3b96b736a132e55caf788036bc36aa86)
+        ;
+
+        
+    
+    
+            var rectangle_bb1c1f8ef717b86b215e19ef78966f8d = L.rectangle(
+                [[11.676, 76.66999999999999], [11.668000000000001, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_ca25a563f60034cb412003cf476e50c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8142301f049428a29ec4017792e5968f = $(`<div id="html_8142301f049428a29ec4017792e5968f" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,7)</p>                             <p><b>Score:</b> 70</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_ca25a563f60034cb412003cf476e50c3.setContent(html_8142301f049428a29ec4017792e5968f);
+            
+        
+
+        rectangle_bb1c1f8ef717b86b215e19ef78966f8d.bindPopup(popup_ca25a563f60034cb412003cf476e50c3)
+        ;
+
+        
+    
+    
+            var rectangle_2bd8a8c1e2d595f02308ae18a1ae2185 = L.rectangle(
+                [[11.676, 76.67999999999999], [11.668000000000001, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_fec7354b3e4feccadf34412b7a480e96 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed032716465f0f9d3ded4e605c1e3474 = $(`<div id="html_ed032716465f0f9d3ded4e605c1e3474" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (3,8)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_fec7354b3e4feccadf34412b7a480e96.setContent(html_ed032716465f0f9d3ded4e605c1e3474);
+            
+        
+
+        rectangle_2bd8a8c1e2d595f02308ae18a1ae2185.bindPopup(popup_fec7354b3e4feccadf34412b7a480e96)
+        ;
+
+        
+    
+    
+            var rectangle_23dec20733c80235b1db1f534f9e9e87 = L.rectangle(
+                [[11.668, 76.64999999999999], [11.66, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_dbdfbbd4f6eadb34c0604a3250d84c1f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9943ca6f164271d539201d1ebdb83e46 = $(`<div id="html_9943ca6f164271d539201d1ebdb83e46" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (4,5)</p>                             <p><b>Score:</b> 70</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_dbdfbbd4f6eadb34c0604a3250d84c1f.setContent(html_9943ca6f164271d539201d1ebdb83e46);
+            
+        
+
+        rectangle_23dec20733c80235b1db1f534f9e9e87.bindPopup(popup_dbdfbbd4f6eadb34c0604a3250d84c1f)
+        ;
+
+        
+    
+    
+            var rectangle_47aa1f2241d99bfeaf8bdc2e0c5285b3 = L.rectangle(
+                [[11.668, 76.66], [11.66, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_2085c03670ab3aadd8d4ac09511911d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a6a8481d15970166c6a4fe556fe735b3 = $(`<div id="html_a6a8481d15970166c6a4fe556fe735b3" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (4,6)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_2085c03670ab3aadd8d4ac09511911d6.setContent(html_a6a8481d15970166c6a4fe556fe735b3);
+            
+        
+
+        rectangle_47aa1f2241d99bfeaf8bdc2e0c5285b3.bindPopup(popup_2085c03670ab3aadd8d4ac09511911d6)
+        ;
+
+        
+    
+    
+            var rectangle_30267c40c745d1e01b80835d151cab88 = L.rectangle(
+                [[11.668, 76.66999999999999], [11.66, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_940172ffe4aa015715b7e468889ee264 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d15c82e4d48acbd4b099245410850820 = $(`<div id="html_d15c82e4d48acbd4b099245410850820" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (4,7)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_940172ffe4aa015715b7e468889ee264.setContent(html_d15c82e4d48acbd4b099245410850820);
+            
+        
+
+        rectangle_30267c40c745d1e01b80835d151cab88.bindPopup(popup_940172ffe4aa015715b7e468889ee264)
+        ;
+
+        
+    
+    
+            var rectangle_ece53800f7e0344d17c72433055c526c = L.rectangle(
+                [[11.668, 76.67999999999999], [11.66, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_bc819319ad443e182bb261c89eb95ce3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_380ac0677f508a210897e6872f746b71 = $(`<div id="html_380ac0677f508a210897e6872f746b71" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (4,8)</p>                             <p><b>Score:</b> 10</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_bc819319ad443e182bb261c89eb95ce3.setContent(html_380ac0677f508a210897e6872f746b71);
+            
+        
+
+        rectangle_ece53800f7e0344d17c72433055c526c.bindPopup(popup_bc819319ad443e182bb261c89eb95ce3)
+        ;
+
+        
+    
+    
+            var rectangle_e93e3f3c715dcb63b3501a1224e5dc57 = L.rectangle(
+                [[11.66, 76.64999999999999], [11.652000000000001, 76.66]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_3881f771be275a200d4a4f6772b734a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d0b07de5be43bf65d7ba255bc1755cf2 = $(`<div id="html_d0b07de5be43bf65d7ba255bc1755cf2" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (5,5)</p>                             <p><b>Score:</b> 60</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_3881f771be275a200d4a4f6772b734a1.setContent(html_d0b07de5be43bf65d7ba255bc1755cf2);
+            
+        
+
+        rectangle_e93e3f3c715dcb63b3501a1224e5dc57.bindPopup(popup_3881f771be275a200d4a4f6772b734a1)
+        ;
+
+        
+    
+    
+            var rectangle_4447df9085f9f093fdc494d310ebaac4 = L.rectangle(
+                [[11.66, 76.66], [11.652000000000001, 76.67]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_3bbd4685a192938cf65195421825c106 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe55c640f63a952e74f239c813bb3a09 = $(`<div id="html_fe55c640f63a952e74f239c813bb3a09" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (5,6)</p>                             <p><b>Score:</b> 70</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_3bbd4685a192938cf65195421825c106.setContent(html_fe55c640f63a952e74f239c813bb3a09);
+            
+        
+
+        rectangle_4447df9085f9f093fdc494d310ebaac4.bindPopup(popup_3bbd4685a192938cf65195421825c106)
+        ;
+
+        
+    
+    
+            var rectangle_05d80cb3176dd5d911596b9dcb4548b7 = L.rectangle(
+                [[11.66, 76.66999999999999], [11.652000000000001, 76.67999999999999]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_5d27f98b1b3ddb816da5412b9dd6898c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ead0bdb1a04f82f70f86a0717fc7442 = $(`<div id="html_5ead0bdb1a04f82f70f86a0717fc7442" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (5,7)</p>                             <p><b>Score:</b> 80</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_5d27f98b1b3ddb816da5412b9dd6898c.setContent(html_5ead0bdb1a04f82f70f86a0717fc7442);
+            
+        
+
+        rectangle_05d80cb3176dd5d911596b9dcb4548b7.bindPopup(popup_5d27f98b1b3ddb816da5412b9dd6898c)
+        ;
+
+        
+    
+    
+            var rectangle_a5ab6f3e76a17aa90f03c2493582ff95 = L.rectangle(
+                [[11.66, 76.67999999999999], [11.652000000000001, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#1E88E5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E88E5", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_4ab745b914cd518325a03d57aa602d48);
+        
+    
+        var popup_2a20dedb87161d96d74e8af0078dd891 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_467f80cb750f1867461d3cc8235f4407 = $(`<div id="html_467f80cb750f1867461d3cc8235f4407" style="width: 100.0%; height: 100.0%;">                         <div style="font-family: Arial; padding: 10px;">                             <h4>Cell Information</h4>                             <p><b>Position:</b> (5,8)</p>                             <p><b>Score:</b> 90</p>                             <p><b>Status:</b> Best Square</p>                         </div>                         </div>`)[0];
+                popup_2a20dedb87161d96d74e8af0078dd891.setContent(html_467f80cb750f1867461d3cc8235f4407);
+            
+        
+
+        rectangle_a5ab6f3e76a17aa90f03c2493582ff95.bindPopup(popup_2a20dedb87161d96d74e8af0078dd891)
+        ;
+
+        
+    
+    
+            feature_group_4ab745b914cd518325a03d57aa602d48.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var feature_group_54c352058cd0e6119c0812ddf6fcbcd8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var rectangle_4d454e9ca5b283bc7d16453afd950ce0 = L.rectangle(
+                [[11.684, 76.64999999999999], [11.652, 76.69]],
+                {"bubblingMouseEvents": true, "color": "#FFA000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFA000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_54c352058cd0e6119c0812ddf6fcbcd8);
+        
+    
+        var popup_4502329d5922688a469a869cda08300d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_492d97c225ff3d797db1176643227ccf = $(`<div id="html_492d97c225ff3d797db1176643227ccf" style="width: 100.0%; height: 100.0%;">Best 4x4 Square (Score: 1110)</div>`)[0];
+                popup_4502329d5922688a469a869cda08300d.setContent(html_492d97c225ff3d797db1176643227ccf);
+            
+        
+
+        rectangle_4d454e9ca5b283bc7d16453afd950ce0.bindPopup(popup_4502329d5922688a469a869cda08300d)
+        ;
+
+        
+    
+    
+            feature_group_54c352058cd0e6119c0812ddf6fcbcd8.addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+        
+    
+            var layer_control_b3abe9407caadef777e91bf53035f635_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_dbed9620ba3be87153f4d8ddce2fa54d,
+                    "stamenterrain" : tile_layer_a94fbd12bc22a2abc5a336d3f49ca7fc,
+                    "stamentoner" : tile_layer_5217e5cd2982afa391b70af4455fbdc4,
+                },
+                overlays :  {
+                    "Low Value" : feature_group_930c71eec195e857cd2cf0ce4cfef835,
+                    "High Value" : feature_group_be298405145968fa60acb055b765781c,
+                    "Best Square" : feature_group_4ab745b914cd518325a03d57aa602d48,
+                    "Best Square Outline" : feature_group_54c352058cd0e6119c0812ddf6fcbcd8,
+                },
+            };
+            let layer_control_b3abe9407caadef777e91bf53035f635 = L.control.layers(
+                layer_control_b3abe9407caadef777e91bf53035f635_layers.base_layers,
+                layer_control_b3abe9407caadef777e91bf53035f635_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_5d523e99ef2101b078172b69a3f7d5d1);
+
+        
+</script>
+</html>

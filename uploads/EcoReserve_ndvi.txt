@@ -1,0 +1,4 @@
+Grid shape: (100, 100)
+Best square: 4x4 from (43,18)
+Sum: 606
+Runtime: 0.1747s
