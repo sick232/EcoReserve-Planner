@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Monitoring Zone | EcoReserve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #11998e;
+            --success: #38ef7d;
+            --warning: #ffc107;
+            --info: #2196f3;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border: #dee2e6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #c8facc 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(17, 153, 142, 0.12);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), #0d6b5c);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px;
+        }
+        .status-box {
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+        }
+        .status-info {
+            background: #e3f2fd;
+            border-left: 4px solid var(--info);
+            color: #1565c0;
+        }
+        .status-success {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            color: #1b5e20;
+        }
+        .status-warning {
+            background: #fff8e1;
+            border-left: 4px solid var(--warning);
+            color: #ff8f00;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            .result-grid { grid-template-columns: 1fr; }
+        }
+        .result-card {
+            background: #f8f9fa;
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+        .result-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .result-unit {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        .points-list {
+            background: #f1f8ff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px dashed #90caf9;
+            max-height: 280px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+        .points-list h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .point-item {
+            padding: 6px 0;
+            border-bottom: 1px dotted #bbdefb;
+        }
+        .point-item:last-child {
+            border-bottom: none;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background: #0d6b5c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(17, 153, 142, 0.3);
+        }
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Secure Monitoring Zone</h1>
+            <p>100% Guaranteed Coverage Area by All Laser Beams</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <!-- Status Message -->
+            {% if message %}
+            <div class="status-box 
+                {% if 'Auto-generated' in message %}status-warning
+                {% elif 'formed from' in message %}status-success
+                {% else %}status-info{% endif %}">
+                <strong>Status:</strong> {{ message }}
+            </div>
+            {% endif %}
+
+            <!-- Results Grid -->
+            <div class="result-grid">
+                <div class="result-card">
+                    <h3>Coverage Area</h3>
+                    <div class="result-value">{{ "%.6f"|format(area) }}</div>
+                    <div class="result-unit">square kilometers</div>
+                </div>
+                <div class="result-card">
+                    <h3>Zone Type</h3>
+                    <div class="result-value">
+                        {% if hull|length == 4 and 'Auto-generated' in (message or '') %}
+                            2×2 Grid Cell
+                        {% else %}
+                            Convex Polygon
+                        {% endif %}
+                    </div>
+                    <div class="result-unit">{{ hull|length }} vertices</div>
+                </div>
+            </div>
+
+            <!-- Boundary Points -->
+            <div class="points-list">
+                <h3>Boundary Coordinates (lon, lat)</h3>
+                {% if hull and hull|length > 0 %}
+                    {% for pt in hull %}
+                    <div class="point-item">
+                        ({{ "%.6f"|format(pt[0]) }}, {{ "%.6f"|format(pt[1]) }})
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="point-item" style="color:#999; font-style:italic;">
+                        No coordinate data available
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Back Button -->
+            <a href="/" class="back-btn">
+                Back to Dashboard
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            EcoReserve AI • Secure Zone Analysis • Real-time Wildlife Monitoring
+        </div>
+    </div>
+</body>
+</html>

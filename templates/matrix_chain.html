@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sensor Fusion</title></head>
+<body style="font-family:Arial;background:#f4f7fa;padding:40px;">
+<div style="max-width:900px;margin:auto;background:white;padding:30px;border-radius:16px;">
+  <h2>Sensor Data Fusion Planner</h2>
+  <form method="post">
+    <p><strong>Dimensions (e.g., 100 100 100 100):</strong></p>
+    <input name="dimensions" value="100 100 100 100" style="width:100%;padding:10px;">
+    <p><strong>Memory Limit L:</strong></p>
+    <input name="memory_limit" value="1000000" style="width:100%;padding:10px;">
+    <button style="margin-top:15px;padding:12px 30px;background:#11998e;color:white;border:none;border-radius:8px;">Compute</button>
+  </form>
+
+  {% if result %}
+    <div style="margin-top:30px;padding:20px;background:#e8f5e9;border-radius:10px;">
+      <h3>Optimal Fusion Plan</h3>
+      <p><strong>Cost:</strong> {{ result.cost }}</p>
+      <p><strong>Order:</strong> {{ result.parenthesization }}</p>
+    </div>
+  {% endif %}
+  <p><a href="/">Back</a></p>
+</div>
+</body>
+</html>
